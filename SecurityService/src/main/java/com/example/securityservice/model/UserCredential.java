@@ -16,7 +16,7 @@ public class UserCredential {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @Column(name = "name")
     private String name;
     @Column(name = "email")

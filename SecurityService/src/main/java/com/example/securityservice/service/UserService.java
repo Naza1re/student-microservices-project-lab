@@ -31,7 +31,7 @@ public class UserService {
     }
 
     public ResponseEntity<UserCredential> getUserByID(Long id) throws UserNotFoundException {
-        Optional<UserCredential>opt_user = userCredentialRepository.findById(id);
+        Optional<UserCredential> opt_user = userCredentialRepository.findById(id);
         if (opt_user.isPresent()){
             return
                     new ResponseEntity<>(opt_user.get(),HttpStatus.OK);
@@ -42,7 +42,7 @@ public class UserService {
 
 
     public ResponseEntity<UserCredential> updateUserById(Long id,UserCredential userCredential) throws UserNotFoundException {
-        Optional<UserCredential> opt_user = userCredentialRepository.findById(id);
+        Optional<UserCredential> opt_user = userCredentialRepository.findById( id);
 
         if (opt_user.isPresent()){
             opt_user.get().setName(userCredential.getName());
@@ -57,7 +57,7 @@ public class UserService {
     }
 
     public HttpStatus deleteUserById(Long id) throws UserPrincipalNotFoundException {
-        Optional<UserCredential> opt_user = userCredentialRepository.findById(id);
+        Optional<UserCredential> opt_user = userCredentialRepository.findById( id);
         if(opt_user.isPresent()){
             userCredentialRepository.delete(opt_user.get());
             return HttpStatus.OK;

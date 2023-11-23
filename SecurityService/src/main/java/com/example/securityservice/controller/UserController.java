@@ -25,7 +25,7 @@ public class UserController {
         return userService.getAllUsers();
     }
     @GetMapping("/{id}")
-    public ResponseEntity<UserCredential> getUserById(@PathVariable Long id )throws UserNotFoundException {
+    public ResponseEntity<UserCredential> getUserById(@PathVariable Long  id )throws UserNotFoundException {
         return userService.getUserByID(id);
     }
     @PutMapping("/{id}/update")
